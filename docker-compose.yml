@@ -1,91 +1,75 @@
-version: '3'
+version: "3.3"
 services:
-    laravel.test:
-        build:
-            context: ./vendor/laravel/sail/runtimes/8.2
-            dockerfile: Dockerfile
-            args:
-                WWWGROUP: '${WWWGROUP}'
-        image: sail-8.2/app
-        extra_hosts:
-            - 'host.docker.internal:host-gateway'
-        ports:
-            - '${APP_PORT:-80}:80'
-            - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
-        environment:
-            WWWUSER: '${WWWUSER}'
-            LARAVEL_SAIL: 1
-            XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-off}'
-            XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
-        volumes:
-            - '.:/var/www/html'
-        networks:
-            - sail
-        depends_on:
-            - pgsql
-            - meilisearch
-            - mailpit
-            - memcached
-    pgsql:
-        image: 'postgres:15'
-        ports:
-            - '${FORWARD_DB_PORT:-5432}:5432'
-        environment:
-            PGPASSWORD: '${DB_PASSWORD:-secret}'
-            POSTGRES_DB: '${DB_DATABASE}'
-            POSTGRES_USER: '${DB_USERNAME}'
-            POSTGRES_PASSWORD: '${DB_PASSWORD:-secret}'
-        volumes:
-            - 'sail-pgsql:/var/lib/postgresql/data'
-            - './vendor/laravel/sail/database/pgsql/create-testing-database.sql:/docker-entrypoint-initdb.d/10-create-testing-database.sql'
-        networks:
-            - sail
-        healthcheck:
-            test:
-                - CMD
-                - pg_isready
-                - '-q'
-                - '-d'
-                - '${DB_DATABASE}'
-                - '-U'
-                - '${DB_USERNAME}'
-            retries: 3
-            timeout: 5s
-    meilisearch:
-        image: 'getmeili/meilisearch:latest'
-        ports:
-            - '${FORWARD_MEILISEARCH_PORT:-7700}:7700'
-        volumes:
-            - 'sail-meilisearch:/meili_data'
-        networks:
-            - sail
-        healthcheck:
-            test:
-                - CMD
-                - wget
-                - '--no-verbose'
-                - '--spider'
-                - 'http://localhost:7700/health'
-            retries: 3
-            timeout: 5s
-    mailpit:
-        image: 'axllent/mailpit:latest'
-        ports:
-            - '${FORWARD_MAILPIT_PORT:-1025}:1025'
-            - '${FORWARD_MAILPIT_DASHBOARD_PORT:-8025}:8025'
-        networks:
-            - sail
-    memcached:
-        image: 'memcached:alpine'
-        ports:
-            - '${FORWARD_MEMCACHED_PORT:-11211}:11211'
-        networks:
-            - sail
+  app:
+    build:
+      args:
+        user: www-data
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: presentation-website
+    container_name: voluntr-api-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    environment:
+      - COMPOSER_MEMORY_LIMIT=-1
+    volumes:
+      - ./:/var/www
+    networks:
+      - voluntr-api
+  db:
+      platform: linux/x86_64
+      image: 'mysql:8.0.33'
+      container_name: 'voluntr-api-db'
+      ports:
+          - '3308:3306'
+      restart: unless-stopped
+      environment:
+          MYSQL_DATABASE: 'voluntr-api'
+          MYSQL_ROOT_PASSWORD: 'voluntr-api'
+          MYSQL_PASSWORD: 'voluntr-api'
+          MYSQL_USER: 'voluntr-api'
+          SERVICE_TAGS: dev
+          SERVICE_NAME: mysql
+      volumes:
+          - 'voluntr-api-mysql:/var/lib/mysql'
+      networks:
+          - voluntr-api
+  meilisearch:
+      image: 'getmeili/meilisearch:latest'
+      ports:
+          - '7700:7700'
+      volumes:
+          - 'voluntr-api-meilisearch:/meili_data'
+      networks:
+          - voluntr-api
+      healthcheck:
+          test:
+              - CMD
+              - wget
+              - '--no-verbose'
+              - '--spider'
+              - 'http://localhost:7700/health'
+          retries: 3
+          timeout: 5s
+
+  nginx:
+    image: nginx:alpine
+    container_name: voluntr-api-nginx
+    restart: unless-stopped
+    ports:
+      - 9020:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - voluntr-api
+
 networks:
-    sail:
-        driver: bridge
+  voluntr-api:
+    driver: bridge
 volumes:
-    sail-pgsql:
+    voluntr-api-mysql:
         driver: local
-    sail-meilisearch:
+    voluntr-api-meilisearch:
         driver: local
