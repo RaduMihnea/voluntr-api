@@ -13,8 +13,11 @@
 
 uses(
     Tests\TestCase::class,
-    // Illuminate\Foundation\Testing\RefreshDatabase::class,
-)->in('Feature', 'Architectural');
+)->in('Architectural');
+
+uses(
+    Tests\Feature\App\Http\Controllers\ApiTest::class,
+)->in('Feature/App/Http/Controllers');
 
 /*
 |--------------------------------------------------------------------------
