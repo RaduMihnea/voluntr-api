@@ -56,19 +56,20 @@ it('gives error if name too short', function () {
 });
 
 it('translates terms in correct language', function () {
-   $response = $this->postJson($this->getEndpoint(), getUserData([
-       'terms' => false,
-   ]), ['Accept-Language' => 'fr']);
+    $response = $this->postJson($this->getEndpoint(), getUserData([
+        'terms' => false,
+    ]), ['Accept-Language' => 'fr']);
 
-   expect($response)
-       ->assertUnprocessable()
-       ->assertJsonValidationErrors('terms')
-       ->assertJson([
-           'message' => __('validation.accepted', ['attribute' => __('validation.attributes.terms')]),
-       ]);
+    expect($response)
+        ->assertUnprocessable()
+        ->assertJsonValidationErrors('terms')
+        ->assertJson([
+            'message' => __('validation.accepted', ['attribute' => __('validation.attributes.terms')]),
+        ]);
 });
 
-function getUserData(array $attributes = []) {
+function getUserData(array $attributes = [])
+{
     return array_merge([
         'name' => 'John Doe',
         'email' => 'john@doe.com',
@@ -76,4 +77,3 @@ function getUserData(array $attributes = []) {
         'terms' => true,
     ], $attributes);
 }
-

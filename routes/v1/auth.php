@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Http\Controllers\Authentication\LoginController;
 use App\Http\Controllers\Authentication\RegisterController;
 
