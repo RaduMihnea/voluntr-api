@@ -1,6 +1,5 @@
 <?php
 
-
 class HttpApiQueryBuilder
 {
     private array $includes;

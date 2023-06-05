@@ -68,7 +68,8 @@ it('translates terms in correct language', function () {
        ]);
 });
 
-function getUserData(array $attributes = []) {
+function getUserData(array $attributes = [])
+{
     return array_merge([
         'name' => 'John Doe',
         'email' => 'john@doe.com',
@@ -76,4 +77,3 @@ function getUserData(array $attributes = []) {
         'terms' => true,
     ], $attributes);
 }
-
