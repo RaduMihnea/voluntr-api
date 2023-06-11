@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Domain\Volunteer\Models\Volunteer;
-use Domains\Volunteer\Models\Volunteer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
