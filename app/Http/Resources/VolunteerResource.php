@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources;
 
-use Domains\Volunteer\Models\Volunteer;
+use Domain\Volunteer\Models\Volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -12,7 +12,8 @@ class VolunteerResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'name' => $this->name,
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
             'email' => $this->email,
         ];
     }

@@ -3,10 +3,11 @@
 namespace App\Http\Resources\Authentication;
 
 use App\Http\Resources\VolunteerResource;
+use Domain\Volunteer\Models\Volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/** @mixin \App\Models\User */
+/** @mixin Volunteer */
 class AuthenticationResource extends JsonResource
 {
     public function toArray(Request $request): array
