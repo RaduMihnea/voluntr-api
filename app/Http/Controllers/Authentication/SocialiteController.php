@@ -4,14 +4,13 @@ namespace App\Http\Controllers\Authentication;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Authentication\SocialiteRequest;
-use App\Http\Resources\Authentication\AuthenticationResource;
+use Domain\Authentication\DTOs\UserData;
 use Domain\Volunteer\Models\Volunteer;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
 {
-    public function __invoke(SocialiteRequest $request): JsonResource
+    public function __invoke(SocialiteRequest $request): UserData
     {
         /** @phpstan-ignore-next-line */
         $providerUser = Socialite::driver($request->provider)->userFromToken($request->provider_token);
@@ -22,6 +21,6 @@ class SocialiteController extends Controller
             'name' => $providerUser->getName(),
         ]);
 
-        return new AuthenticationResource($user);
+        return UserData::from($user);
     }
 }

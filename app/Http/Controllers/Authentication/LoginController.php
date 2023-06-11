@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Authentication;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Authentication\LoginRequest;
-use App\Http\Resources\Authentication\AuthenticationResource;
 use Domain\Authentication\DTOs\UserData;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Resources\Json\JsonResource;
 
 class LoginController extends Controller
 {

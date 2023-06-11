@@ -5,8 +5,6 @@ namespace Domain\Authentication\DTOs;
 use Domain\Authentication\Enums\RoleEnum;
 use Domain\Organization\Models\Organization;
 use Domain\Volunteer\Models\Volunteer;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
@@ -20,7 +18,8 @@ class UserData extends Data
         public string $email,
         public string $role,
         public string $token,
-    ) {}
+    ) {
+    }
 
     public static function fromOrganization(Organization $organization): self
     {
