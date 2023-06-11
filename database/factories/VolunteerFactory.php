@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Domain\Volunteer\Models\Volunteer;
 use Domains\Volunteer\Models\Volunteer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -11,6 +12,8 @@ use Illuminate\Support\Str;
  */
 class VolunteerFactory extends Factory
 {
+    protected $model = Volunteer::class;
+
     /**
      * Define the model's default state.
      *
