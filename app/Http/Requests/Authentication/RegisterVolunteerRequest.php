@@ -2,10 +2,14 @@
 
 namespace App\Http\Requests\Authentication;
 
+use Domain\Volunteer\DTOs\VolunteerData;
 use Illuminate\Foundation\Http\FormRequest;
+use Spatie\LaravelData\WithData;
 
-class RegisterRequest extends FormRequest
+class RegisterVolunteerRequest extends FormRequest
 {
+    use WithData;
+
     public function authorize(): bool
     {
         return true;
@@ -20,5 +24,10 @@ class RegisterRequest extends FormRequest
             'password' => ['required', 'min:6', 'max:255', 'string'],
             'terms' => ['required', 'boolean', 'accepted'],
         ];
+    }
+
+    protected function dataClass(): string
+    {
+        return VolunteerData::class;
     }
 }
