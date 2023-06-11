@@ -2,11 +2,12 @@
 
 namespace App\Http\Resources;
 
+use Domains\Volunteer\Models\Volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/** @mixin \App\Models\User */
-class UserResource extends JsonResource
+/** @mixin Volunteer */
+class VolunteerResource extends JsonResource
 {
     public function toArray(Request $request): array
     {

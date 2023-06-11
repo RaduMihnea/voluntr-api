@@ -2,13 +2,14 @@
 
 namespace Database\Factories;
 
+use Domains\Volunteer\Models\Volunteer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends Factory<Volunteer>
  */
-class UserFactory extends Factory
+class VolunteerFactory extends Factory
 {
     /**
      * Define the model's default state.

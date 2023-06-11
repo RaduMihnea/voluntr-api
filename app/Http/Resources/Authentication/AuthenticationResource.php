@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources\Authentication;
 
-use App\Http\Resources\UserResource;
+use App\Http\Resources\VolunteerResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -13,7 +13,7 @@ class AuthenticationResource extends JsonResource
     {
         return [
             'token' => $this->createToken('Voluntr')->plainTextToken,
-            'user' => new UserResource($this),
+            'user' => new VolunteerResource($this),
         ];
     }
 }
