@@ -47,12 +47,12 @@ it('gives error if email invalid', function () {
 
 it('gives error if name too short', function () {
     $response = $this->postJson($this->getEndpoint(), getUserData([
-        'name' => 'Doe',
+        'first_name' => 'Do',
     ]));
 
     expect($response)
         ->assertUnprocessable()
-        ->assertJsonValidationErrors('name');
+        ->assertJsonValidationErrors('first_name');
 });
 
 it('translates terms in correct language', function () {
@@ -71,7 +71,8 @@ it('translates terms in correct language', function () {
 function getUserData(array $attributes = [])
 {
     return array_merge([
-        'name' => 'John Doe',
+        'first_name' => 'John',
+        'last_name' => 'Doe',
         'email' => 'john@doe.com',
         'password' => 'password',
         'terms' => true,
