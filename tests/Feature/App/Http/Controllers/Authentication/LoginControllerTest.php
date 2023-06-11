@@ -1,17 +1,17 @@
 <?php
 
-use App\Models\User;
+use Domain\Volunteer\Models\Volunteer;
 
 beforeEach(function () {
     $this->resource = 'login';
-    $this->user = User::factory()->create([
+    $this->volunteer = Volunteer::factory()->create([
         'password' => Hash::make('password'),
     ]);
 });
 
 it('can login a user', function () {
     $response = $this->postJson($this->getEndpoint(), [
-        'email' => $this->user->email,
+        'email' => $this->volunteer->email,
         'password' => 'password',
     ]);
 
@@ -25,7 +25,7 @@ it('can login a user', function () {
 
 it('gives error if password too short', function () {
     $response = $this->postJson($this->getEndpoint(), [
-        'email' => $this->user->email,
+        'email' => $this->volunteer->email,
         'password' => 'wrong',
     ]);
 
@@ -46,7 +46,7 @@ it('gives error if email invalid', function () {
 
 it('returns unauthorized if wrong credentials', function () {
     $response = $this->postJson($this->getEndpoint(), [
-        'email' => $this->user->email,
+        'email' => $this->volunteer->email,
         'password' => 'wrong-password',
     ]);
 

@@ -2,16 +2,18 @@
 
 namespace App\Http\Resources;
 
+use Domain\Volunteer\Models\Volunteer;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/** @mixin \App\Models\User */
-class UserResource extends JsonResource
+/** @mixin Volunteer */
+class VolunteerResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
         return [
-            'name' => $this->name,
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
             'email' => $this->email,
         ];
     }
