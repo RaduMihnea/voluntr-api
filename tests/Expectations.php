@@ -33,7 +33,7 @@ expect()->extend('assertJsonData', function ($value, bool $strict = false) {
 });
 
 expect()->extend('resourceHasAll', function (array $value) {
-    return $this->assertJsonData(
+    return $this->assertJson(
         fn (AssertableJson $json) => $json
             ->hasAll($value)
             ->etc()
@@ -41,7 +41,7 @@ expect()->extend('resourceHasAll', function (array $value) {
 });
 
 expect()->extend('resourceMissingAll', function (array $value) {
-    return $this->assertJsonData(
+    return $this->assertJson(
         fn (AssertableJson $json) => $json
             ->missingAll($value)
             ->etc()
@@ -50,10 +50,10 @@ expect()->extend('resourceMissingAll', function (array $value) {
 
 expect()->extend('resourceWhereAll', function ($value, bool $strict = false) {
     if (is_array($value)) {
-        return $this->assertJsonData($value, $strict);
+        return $this->assertJson($value, $strict);
     }
 
-    return $this->assertJsonData(
+    return $this->assertJson(
         fn (AssertableJson $json) => $json
             ->whereAll($value)
             ->etc()
@@ -61,7 +61,7 @@ expect()->extend('resourceWhereAll', function ($value, bool $strict = false) {
 });
 
 expect()->extend('whereAllTypes', function ($value) {
-    return $this->assertJsonData(
+    return $this->assertJson(
         fn (AssertableJson $json) => $json
             ->whereAllType($value)
             ->etc()

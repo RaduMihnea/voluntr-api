@@ -1,22 +1,25 @@
 <?php
 
 beforeEach(function () {
-    $this->resource = 'register';
+    $this->resource = 'register-organization';
 });
 
-it('can register a user', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData());
+it('can register an organization', function () {
+    $response = $this->postJson($this->getEndpoint(), getOrganizationData());
 
     expect($response)
         ->assertCreated()
         ->whereAllTypes([
+            'id' => 'integer',
             'token' => 'string',
-            'user' => 'array',
+            'name' => 'string',
+            'role' => 'string',
+            'email' => 'string',
         ]);
 });
 
 it('gives error if terms are not accepted', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData([
+    $response = $this->postJson($this->getEndpoint(), getOrganizationData([
         'terms' => false,
     ]));
 
@@ -26,7 +29,7 @@ it('gives error if terms are not accepted', function () {
 });
 
 it('gives error if password too short', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData([
+    $response = $this->postJson($this->getEndpoint(), getOrganizationData([
         'password' => 'pass',
     ]));
 
@@ -36,7 +39,7 @@ it('gives error if password too short', function () {
 });
 
 it('gives error if email invalid', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData([
+    $response = $this->postJson($this->getEndpoint(), getOrganizationData([
         'email' => 'john',
     ]));
 
@@ -46,17 +49,17 @@ it('gives error if email invalid', function () {
 });
 
 it('gives error if name too short', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData([
-        'first_name' => 'Do',
+    $response = $this->postJson($this->getEndpoint(), getOrganizationData([
+        'name' => 'Do',
     ]));
 
     expect($response)
         ->assertUnprocessable()
-        ->assertJsonValidationErrors('first_name');
+        ->assertJsonValidationErrors('name');
 });
 
 it('translates terms in correct language', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData([
+    $response = $this->postJson($this->getEndpoint(), getOrganizationData([
         'terms' => false,
     ]), ['Accept-Language' => 'fr']);
 
@@ -68,12 +71,11 @@ it('translates terms in correct language', function () {
         ]);
 });
 
-function getUserData(array $attributes = [])
+function getOrganizationData(array $attributes = [])
 {
     return array_merge([
-        'first_name' => 'John',
-        'last_name' => 'Doe',
-        'email' => 'john@doe.com',
+        'name' => 'Helping People',
+        'email' => 'helping@people.com',
         'password' => 'password',
         'terms' => true,
     ], $attributes);

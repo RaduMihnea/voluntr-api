@@ -1,5 +1,6 @@
 <?php
 
+use Domain\Organization\Models\Organization;
 use Domain\Volunteer\Models\Volunteer;
 
 beforeEach(function () {
@@ -9,17 +10,33 @@ beforeEach(function () {
     ]);
 });
 
-it('can login a user', function () {
+it('can login a volunteer', function () {
     $response = $this->postJson($this->getEndpoint(), [
         'email' => $this->volunteer->email,
         'password' => 'password',
     ]);
 
     expect($response)
-        ->assertOk()
+        ->assertCreated()
         ->whereAllTypes([
             'token' => 'string',
-            'user' => 'array',
+            'name' => 'string',
+        ]);
+});
+
+it('can login an organization', function () {
+    $organization = Organization::factory()->create();
+
+    $response = $this->postJson($this->getEndpoint(), [
+        'email' => $organization->email,
+        'password' => 'password',
+    ]);
+
+    expect($response)
+        ->assertCreated()
+        ->whereAllTypes([
+            'token' => 'string',
+            'name' => 'string',
         ]);
 });
 
