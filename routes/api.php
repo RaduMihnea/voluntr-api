@@ -18,6 +18,7 @@ Route::prefix('v1')
     ->name('api.v1.')
     ->group(function () {
         require base_path('routes/v1/auth.php');
+        require base_path('routes/v1/volunteer.php');
     });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

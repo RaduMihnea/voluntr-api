@@ -2,7 +2,7 @@
 
 use Illuminate\Testing\Fluent\AssertableJson;
 
-expect()->extend('firstResourceToMatchJson', function($value, bool $strict = false) {
+expect()->extend('firstResourceToMatchJson', function ($value, bool $strict = false) {
     if (is_array($value)) {
         return $this->assertJson([
             'data' => [
@@ -18,7 +18,7 @@ expect()->extend('firstResourceToMatchJson', function($value, bool $strict = fal
     );
 });
 
-expect()->extend('assertJsonData', function($value, bool $strict = false) {
+expect()->extend('assertJsonData', function ($value, bool $strict = false) {
     if (is_array($value)) {
         return $this->assertJson([
             'data' => $value,
@@ -32,43 +32,43 @@ expect()->extend('assertJsonData', function($value, bool $strict = false) {
     );
 });
 
-expect()->extend('resourceHasAll', function(array $value) {
-    return $this->assertJsonData(
+expect()->extend('resourceHasAll', function (array $value) {
+    return $this->assertJson(
         fn (AssertableJson $json) => $json
             ->hasAll($value)
             ->etc()
     );
 });
 
-expect()->extend('resourceMissingAll', function(array $value) {
-    return $this->assertJsonData(
+expect()->extend('resourceMissingAll', function (array $value) {
+    return $this->assertJson(
         fn (AssertableJson $json) => $json
             ->missingAll($value)
             ->etc()
     );
 });
 
-expect()->extend('resourceWhereAll', function($value, bool $strict = false) {
+expect()->extend('resourceWhereAll', function ($value, bool $strict = false) {
     if (is_array($value)) {
-        return $this->assertJsonData($value, $strict);
+        return $this->assertJson($value, $strict);
     }
 
-    return $this->assertJsonData(
+    return $this->assertJson(
         fn (AssertableJson $json) => $json
             ->whereAll($value)
             ->etc()
     );
 });
 
-expect()->extend('whereAllTypes', function($value) {
-    return $this->assertJsonData(
+expect()->extend('whereAllTypes', function ($value) {
+    return $this->assertJson(
         fn (AssertableJson $json) => $json
             ->whereAllType($value)
             ->etc()
     );
 });
 
-expect()->extend('firstResourceHasAll', function($value) {
+expect()->extend('firstResourceHasAll', function ($value) {
     return $this->firstResourceToMatchJson(
         fn (AssertableJson $json) => $json
             ->hasAll($value)
@@ -76,7 +76,7 @@ expect()->extend('firstResourceHasAll', function($value) {
     );
 });
 
-expect()->extend('firstResourceMissingAll', function($value) {
+expect()->extend('firstResourceMissingAll', function ($value) {
     return $this->firstResourceToMatchJson(
         fn (AssertableJson $json) => $json
             ->missingAll($value)
@@ -84,7 +84,7 @@ expect()->extend('firstResourceMissingAll', function($value) {
     );
 });
 
-expect()->extend('firstResourceWhereAll', function($value, bool $strict = false) {
+expect()->extend('firstResourceWhereAll', function ($value, bool $strict = false) {
     if (is_array($value)) {
         return $this->firstResourceToMatchJson($value, $strict);
     }
@@ -111,5 +111,3 @@ expect()->extend('resourcesCount', function (int $count) {
             ->etc()
     );
 });
-
-
