@@ -16,12 +16,12 @@ class VolunteerProfileData extends Data
         public string $firstName,
         public string $lastName,
         public string $email,
-        public string $phone,
-        public Carbon $birthday,
-        public int $cityId,
-        public string $summary,
-        public string $description,
-        public string $avatar,
+        public ?string $phone,
+        public ?Carbon $birthday,
+        public ?int $cityId,
+        public ?string $summary,
+        public ?string $description,
+        public ?string $avatar,
     ) {
     }
 
