@@ -1,6 +1,5 @@
 <?php
 
-use Domain\Organization\Models\Organization;
 use Domain\Volunteer\Models\Volunteer;
 use Illuminate\Http\UploadedFile;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;

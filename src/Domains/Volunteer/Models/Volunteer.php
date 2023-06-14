@@ -31,7 +31,7 @@ class Volunteer extends Authenticatable implements HasMedia
         'birthday',
         'city_id',
         'summary',
-        'description'
+        'description',
     ];
 
     protected $hidden = [

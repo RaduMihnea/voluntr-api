@@ -4,7 +4,6 @@ namespace Domain\Volunteer\DTOs;
 
 use Domain\Volunteer\Models\Volunteer;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Hash;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;

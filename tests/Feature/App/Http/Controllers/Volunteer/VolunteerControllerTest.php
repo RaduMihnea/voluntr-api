@@ -1,6 +1,5 @@
 <?php
 
-use Domain\Organization\Models\Organization;
 use Domain\Regions\Models\City;
 use Domain\Volunteer\Models\Volunteer;
 

@@ -2,7 +2,6 @@
 
 namespace Support\Traits;
 
-
 trait Encryptable
 {
     public function encryptable(string $key): bool
@@ -15,6 +14,7 @@ trait Encryptable
         if ($value) {
             $value = decrypt($value);
         }
+
         return $value;
     }
 
@@ -23,6 +23,7 @@ trait Encryptable
         if ($value) {
             $value = encrypt($value);
         }
+
         return $value;
     }
 
@@ -32,6 +33,7 @@ trait Encryptable
         if ($this->encryptable($key)) {
             $value = $this->decryptAttribute($value);
         }
+
         return $value;
     }
 
@@ -40,6 +42,7 @@ trait Encryptable
         if ($this->encryptable($key)) {
             $value = $this->encryptAttribute($value);
         }
+
         return parent::setAttribute($key, $value);
     }
 
@@ -51,6 +54,7 @@ trait Encryptable
                 $attributes[$key] = $this->decryptAttribute($attribute);
             }
         }
+
         return $attributes;
     }
 }

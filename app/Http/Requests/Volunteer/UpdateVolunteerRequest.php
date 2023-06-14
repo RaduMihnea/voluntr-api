@@ -2,9 +2,7 @@
 
 namespace App\Http\Requests\Volunteer;
 
-use Domain\Volunteer\DTOs\VolunteerProfileData;
 use Illuminate\Foundation\Http\FormRequest;
-use Spatie\LaravelData\WithData;
 
 class UpdateVolunteerRequest extends FormRequest
 {
