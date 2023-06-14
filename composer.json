@@ -31,7 +31,8 @@
             "Domain\\": "src/Domains",
             "Support\\": "src/Support",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Database\\State\\": "database/state/"
         }
     },
     "autoload-dev": {
