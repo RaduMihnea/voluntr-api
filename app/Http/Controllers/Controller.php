@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Traits\HasApiResponse;
 use Exception;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;

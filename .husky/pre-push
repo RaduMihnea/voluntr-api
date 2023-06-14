@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+./bin/validate-branch-name.sh "$(git symbolic-ref --short HEAD)"
+
+# backend tests
+echo '🧪 Running Backend tests...'
+php artisan test -p

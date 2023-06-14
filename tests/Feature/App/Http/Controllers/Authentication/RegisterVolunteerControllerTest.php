@@ -5,18 +5,21 @@ beforeEach(function () {
 });
 
 it('can register a user', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData());
+    $response = $this->postJson($this->getEndpoint(), getVolunteerData());
 
     expect($response)
         ->assertCreated()
         ->whereAllTypes([
+            'id' => 'integer',
+            'name' => 'string',
+            'email' => 'string',
+            'role' => 'string',
             'token' => 'string',
-            'user' => 'array',
         ]);
 });
 
 it('gives error if terms are not accepted', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData([
+    $response = $this->postJson($this->getEndpoint(), getVolunteerData([
         'terms' => false,
     ]));
 
@@ -26,7 +29,7 @@ it('gives error if terms are not accepted', function () {
 });
 
 it('gives error if password too short', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData([
+    $response = $this->postJson($this->getEndpoint(), getVolunteerData([
         'password' => 'pass',
     ]));
 
@@ -36,7 +39,7 @@ it('gives error if password too short', function () {
 });
 
 it('gives error if email invalid', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData([
+    $response = $this->postJson($this->getEndpoint(), getVolunteerData([
         'email' => 'john',
     ]));
 
@@ -46,34 +49,35 @@ it('gives error if email invalid', function () {
 });
 
 it('gives error if name too short', function () {
-    $response = $this->postJson($this->getEndpoint(), getUserData([
-        'name' => 'Doe',
+    $response = $this->postJson($this->getEndpoint(), getVolunteerData([
+        'first_name' => 'Do',
     ]));
 
     expect($response)
         ->assertUnprocessable()
-        ->assertJsonValidationErrors('name');
+        ->assertJsonValidationErrors('first_name');
 });
 
 it('translates terms in correct language', function () {
-   $response = $this->postJson($this->getEndpoint(), getUserData([
-       'terms' => false,
-   ]), ['Accept-Language' => 'fr']);
+    $response = $this->postJson($this->getEndpoint(), getVolunteerData([
+        'terms' => false,
+    ]), ['Accept-Language' => 'fr']);
 
-   expect($response)
-       ->assertUnprocessable()
-       ->assertJsonValidationErrors('terms')
-       ->assertJson([
-           'message' => __('validation.accepted', ['attribute' => __('validation.attributes.terms')]),
-       ]);
+    expect($response)
+        ->assertUnprocessable()
+        ->assertJsonValidationErrors('terms')
+        ->assertJson([
+            'message' => __('validation.accepted', ['attribute' => __('validation.attributes.terms')]),
+        ]);
 });
 
-function getUserData(array $attributes = []) {
+function getVolunteerData(array $attributes = [])
+{
     return array_merge([
-        'name' => 'John Doe',
+        'first_name' => 'John',
+        'last_name' => 'Doe',
         'email' => 'john@doe.com',
         'password' => 'password',
         'terms' => true,
     ], $attributes);
 }
-
