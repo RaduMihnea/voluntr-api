@@ -2,10 +2,8 @@
 
 namespace Database\Factories;
 
-use Domain\Organization\Models\Organization;
 use Domain\Regions\Models\City;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 /**
  * @extends Factory<City>

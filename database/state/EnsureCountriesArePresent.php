@@ -19,7 +19,6 @@ class EnsureCountriesArePresent
         DB::table('countries')->insert($countries);
     }
 
-
     public function present(): bool
     {
         return Country::count() > 0;

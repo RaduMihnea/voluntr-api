@@ -33,7 +33,6 @@ class EnsureCitiesArePresent
         }
     }
 
-
     public function present(): bool
     {
         return City::count() > 0;
