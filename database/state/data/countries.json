@@ -1,0 +1,17 @@
+[
+    {
+        "name": "United Kingdom",
+        "code": "gbr",
+        "iso_code": "gb"
+    },
+    {
+        "name": "Romania",
+        "code": "rou",
+        "iso_code": "ro"
+    },
+    {
+        "name": "France",
+        "code": "fr",
+        "iso_code": "fr"
+    }
+]
