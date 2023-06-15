@@ -182,6 +182,9 @@ return [
 
     'attributes' => [
         'terms' => 'termeni și condiții',
+        'filter' => [
+            'country_id' => 'țară',
+        ],
     ],
 
 ];
