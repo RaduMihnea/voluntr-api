@@ -36,7 +36,7 @@ class VolunteerProfileData extends Data
             phone: $volunteer->phone,
             birthday: $volunteer->birthday,
             cityId: $volunteer->city_id,
-            countryId: $volunteer->city->country_id,
+            countryId: $volunteer->city?->country_id,
             summary: $volunteer->summary,
             description: $volunteer->description,
             avatar: $volunteer->avatar,
