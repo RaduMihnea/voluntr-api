@@ -19,6 +19,7 @@ Route::prefix('v1')
     ->group(function () {
         require base_path('routes/v1/auth.php');
         require base_path('routes/v1/volunteer.php');
+        require base_path('routes/v1/organization.php');
         require base_path('routes/v1/regions.php');
     });
 
