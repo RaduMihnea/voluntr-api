@@ -3,8 +3,10 @@
 namespace Domain\Volunteer\Models;
 
 use Database\Factories\VolunteerFactory;
+use Domain\Regions\Models\City;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -73,5 +75,10 @@ class Volunteer extends Authenticatable implements HasMedia
         return Attribute::make(
             get: fn () => $this->getFirstMediaUrl('avatar')
         );
+    }
+
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
     }
 }

@@ -58,6 +58,16 @@ it('gives error if name too short', function () {
         ->assertJsonValidationErrors('first_name');
 });
 
+it('gives error if password is not confirmed', function () {
+    $response = $this->postJson($this->getEndpoint(), getVolunteerData([
+        'password_confirmation' => 'badpassword',
+    ]));
+
+    expect($response)
+        ->assertUnprocessable()
+        ->assertJsonValidationErrors('password');
+});
+
 it('translates terms in correct language', function () {
     $response = $this->postJson($this->getEndpoint(), getVolunteerData([
         'terms' => false,
@@ -78,6 +88,7 @@ function getVolunteerData(array $attributes = [])
         'last_name' => 'Doe',
         'email' => 'john@doe.com',
         'password' => 'password',
+        'password_confirmation' => 'password',
         'terms' => true,
     ], $attributes);
 }
