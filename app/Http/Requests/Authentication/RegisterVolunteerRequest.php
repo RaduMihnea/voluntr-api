@@ -21,7 +21,7 @@ class RegisterVolunteerRequest extends FormRequest
             'first_name' => ['required', 'min:3', 'max:50', 'string'],
             'last_name' => ['required', 'min:3', 'max:50', 'string'],
             'email' => ['required', 'email', 'unique:volunteers,email'],
-            'password' => ['required', 'min:6', 'max:255', 'string'],
+            'password' => ['required', 'min:6', 'max:255', 'string', 'confirmed'],
             'terms' => ['required', 'boolean', 'accepted'],
         ];
     }
