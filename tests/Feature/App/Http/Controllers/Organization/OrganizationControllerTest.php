@@ -2,7 +2,6 @@
 
 use Domain\Organization\Models\Organization;
 use Domain\Regions\Models\City;
-use Domain\Volunteer\Models\Volunteer;
 
 beforeEach(function () {
     $this->resource = 'organizations';

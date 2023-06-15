@@ -3,7 +3,6 @@
 namespace Domain\Organization\DTOs;
 
 use Domain\Organization\Models\Organization;
-use Illuminate\Support\Carbon;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
