@@ -43,7 +43,7 @@ it('cant upload to another organization', function () {
 it('cant upload other files', function () {
     $this->be($this->organization);
 
-    $response = $this->patchJson($this->getEndpoint($this->organization->id), [
+    $response = $this->postJson($this->getEndpoint($this->organization->id), [
         'file' => UploadedFile::fake()->create('something.pdf'),
     ], ['Content' => 'multipart/form-data']);
 
