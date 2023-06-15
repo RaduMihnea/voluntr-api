@@ -20,7 +20,7 @@ class RegisterOrganizationRequest extends FormRequest
         return [
             'name' => ['required', 'min:3', 'max:50', 'string'],
             'email' => ['required', 'email', 'unique:organizations,email'],
-            'password' => ['required', 'min:6', 'max:255', 'string'],
+            'password' => ['required', 'min:6', 'max:255', 'string', 'confirmed'],
             'terms' => ['required', 'boolean', 'accepted'],
         ];
     }

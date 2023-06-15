@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('volunteers', function (Blueprint $table) {
-            $table->text('phone')->nullable()->after('password');
-            $table->date('birthday')->nullable()->after('phone');
-            $table->string('summary')->nullable()->after('birthday');
+        Schema::table('organizations', function (Blueprint $table) {
+            $table->string('summary')->nullable()->after('password');
             $table->text('description')->nullable()->after('summary');
             $table->foreignId('city_id')->nullable()->after('description')->constrained('cities');
         });
@@ -25,8 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('volunteers', function (Blueprint $table) {
-            $table->dropColumn(['phone', 'birthday', 'summary', 'description', 'city_id']);
+        Schema::table('organizations', function (Blueprint $table) {
+            $table->dropColumn(['summary', 'description', 'city_id']);
         });
     }
 };

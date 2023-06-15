@@ -2,7 +2,7 @@
 
 namespace Tests\Traits;
 
-use HttpApiQueryBuilder;
+use Tests\HttpApiQueryBuilder;
 
 trait BuildsHttpQuery
 {

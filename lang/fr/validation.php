@@ -148,6 +148,9 @@ return [
 
     'attributes' => [
         'terms' => 'terms et conditions',
+        'filter' => [
+            'country_id' => 'pays',
+        ],
     ],
 
 ];

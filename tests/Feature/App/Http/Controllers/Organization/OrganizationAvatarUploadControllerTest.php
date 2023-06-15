@@ -1,41 +1,39 @@
 <?php
 
-use Domain\Volunteer\Models\Volunteer;
+use Domain\Organization\Models\Organization;
 use Illuminate\Http\UploadedFile;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 beforeEach(function () {
-    $this->parentResource = 'volunteers';
+    $this->parentResource = 'organizations';
     $this->resource = 'avatar';
-    $this->volunteer = Volunteer::factory()->create();
+    $this->organization = Organization::factory()->create();
 });
 
 it('can upload new avatar picture', function () {
-    $this->be($this->volunteer);
+    $this->be($this->organization);
 
-    $response = $this->postJson($this->getEndpoint($this->volunteer->id), [
+    $response = $this->postJson($this->getEndpoint($this->organization->id), [
         'file' => UploadedFile::fake()->image('avatar.jpg'),
     ], ['Content' => 'multipart/form-data']);
 
     expect(Media::all()->count())->toBe(1)
-        ->and($this->volunteer->media()->count())
+        ->and($this->organization->media()->count())
         ->toBe(1)
         ->and($response)
         ->assertCreated()
         ->whereAllTypes([
-            'first_name' => 'string',
-            'last_name' => 'string',
+            'name' => 'string',
             'email' => 'string',
-            'phone' => 'string',
             'avatar' => 'string',
         ]);
 });
 
-it('cant upload to another volunteer', function () {
-    $this->be($this->volunteer);
-    $anotherVolunteer = Volunteer::factory()->create();
+it('cant upload to another organization', function () {
+    $this->be($this->organization);
+    $anotherOrganization = Organization::factory()->create();
 
-    $response = $this->postJson($this->getEndpoint($anotherVolunteer->id), [
+    $response = $this->postJson($this->getEndpoint($anotherOrganization->id), [
         'file' => UploadedFile::fake()->image('avatar.png'),
     ], ['Content' => 'multipart/form-data']);
 
@@ -43,9 +41,9 @@ it('cant upload to another volunteer', function () {
 });
 
 it('cant upload other files', function () {
-    $this->be($this->volunteer);
+    $this->be($this->organization);
 
-    $response = $this->postJson($this->getEndpoint($this->volunteer->id), [
+    $response = $this->postJson($this->getEndpoint($this->organization->id), [
         'file' => UploadedFile::fake()->create('something.pdf'),
     ], ['Content' => 'multipart/form-data']);
 
