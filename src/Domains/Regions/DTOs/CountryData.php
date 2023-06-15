@@ -2,7 +2,6 @@
 
 namespace Domain\Regions\DTOs;
 
-use Illuminate\Support\Facades\Hash;
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;

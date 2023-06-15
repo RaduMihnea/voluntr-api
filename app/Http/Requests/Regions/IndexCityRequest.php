@@ -16,7 +16,7 @@ class IndexCityRequest extends FormRequest
         return [
             'filter.country_id' => [
                 'required',
-                'exists:countries,id'
+                'exists:countries,id',
             ],
         ];
     }

@@ -20,7 +20,7 @@ it('can get all countries', function () {
         ->and($response->json())->toHaveCount(1);
 });
 
-it('fails if no country id is passed', function() {
+it('fails if no country id is passed', function () {
     City::factory()->count(3)->create();
 
     $response = $this->getJson($this->getEndpoint());
