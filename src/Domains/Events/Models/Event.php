@@ -53,6 +53,11 @@ class Event extends Model implements HasMedia
             ->nonQueued();
     }
 
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
     public function cover(): Attribute
     {
         return Attribute::make(

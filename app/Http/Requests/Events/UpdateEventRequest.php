@@ -61,6 +61,7 @@ class UpdateEventRequest extends FormRequest
                 'exists:event_types,id',
             ],
             'image' => [
+                'sometimes',
                 'required',
                 'image',
             ],
