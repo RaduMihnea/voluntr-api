@@ -4,13 +4,11 @@ namespace Domain\Events\DTOs;
 
 use Domain\Events\Models\Event;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Str;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
-use Support\Actions\CreateUniqueSlugAction;
 
 #[MapName(SnakeCaseMapper::class)]
 class EventData extends Data

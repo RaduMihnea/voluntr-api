@@ -1,9 +1,9 @@
 <?php
 
-use Support\Actions\CreateUniqueSlugAction;
 use Domain\Events\Models\Event;
+use Support\Actions\CreateUniqueSlugAction;
 
-it('creates a unique slug', function() {
+it('creates a unique slug', function () {
     $event = Event::factory()->create([
         'name' => 'My Event',
         'slug' => 'my-event',
@@ -14,7 +14,7 @@ it('creates a unique slug', function() {
     expect($slug)->not->toBe($event->slug);
 });
 
-it('creates multiple unique slugs', function() {
+it('creates multiple unique slugs', function () {
     $event = Event::factory()->create([
         'name' => 'My Event',
         'slug' => 'my-event',

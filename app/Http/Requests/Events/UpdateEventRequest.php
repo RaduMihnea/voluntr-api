@@ -62,8 +62,8 @@ class UpdateEventRequest extends FormRequest
             ],
             'image' => [
                 'required',
-                'image'
-            ]
+                'image',
+            ],
         ];
     }
 

@@ -3,7 +3,6 @@
 namespace Domain\Events\Actions;
 
 use Domain\Events\DTOs\EventCreateData;
-use Domain\Events\DTOs\EventData;
 use Domain\Events\Models\Event;
 
 class CreateEventAction

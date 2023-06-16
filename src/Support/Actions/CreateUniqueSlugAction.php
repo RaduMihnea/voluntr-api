@@ -17,7 +17,7 @@ class CreateUniqueSlugAction
 
             $number = intval(end($pieces));
 
-            $slug .= '-' . ($number + 1);
+            $slug .= '-'.($number + 1);
         }
 
         return $slug;

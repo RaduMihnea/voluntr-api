@@ -1,10 +1,9 @@
 <?php
 
+use Domain\Events\Models\Event;
 use Domain\Events\Models\EventType;
 use Domain\Organization\Models\Organization;
 use Domain\Volunteer\Models\Volunteer;
-use Domain\Events\Models\Event;
-use Illuminate\Http\UploadedFile;
 
 beforeEach(function () {
     $this->resource = 'events';
@@ -113,4 +112,3 @@ function getEventData(array $attributes = [])
         'minimum_participant_age' => 18,
     ], $attributes);
 }
-

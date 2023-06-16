@@ -6,7 +6,7 @@ beforeEach(function () {
     $this->resource = 'event-types';
 });
 
-it('can view all event-types', function() {
+it('can view all event-types', function () {
     EventType::factory()->count(10)->create();
 
     $response = $this->getJson($this->getEndpoint());

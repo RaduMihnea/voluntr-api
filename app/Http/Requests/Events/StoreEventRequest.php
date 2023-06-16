@@ -61,8 +61,8 @@ class StoreEventRequest extends FormRequest
             ],
             'image' => [
                 'required',
-                'image'
-            ]
+                'image',
+            ],
         ];
     }
 
