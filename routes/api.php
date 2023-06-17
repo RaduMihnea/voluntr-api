@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +20,5 @@ Route::prefix('v1')
         require base_path('routes/v1/volunteer.php');
         require base_path('routes/v1/organization.php');
         require base_path('routes/v1/regions.php');
+        require base_path('routes/v1/events.php');
     });
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});

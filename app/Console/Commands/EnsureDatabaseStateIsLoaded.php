@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Database\State\EnsureCitiesArePresent;
 use Database\State\EnsureCountriesArePresent;
+use Database\State\EnsureEventTypesArePresent;
 use Illuminate\Console\Command;
 
 class EnsureDatabaseStateIsLoaded extends Command
@@ -17,6 +18,7 @@ class EnsureDatabaseStateIsLoaded extends Command
         collect([
             new EnsureCountriesArePresent(),
             new EnsureCitiesArePresent(),
+            new EnsureEventTypesArePresent(),
         ])->each->__invoke();
     }
 }
