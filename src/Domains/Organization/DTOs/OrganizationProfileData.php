@@ -13,6 +13,7 @@ class OrganizationProfileData extends Data
     public function __construct(
         public int $id,
         public string $name,
+        public string $slug,
         public string $email,
         public ?int $cityId,
         public ?int $countryId,
@@ -27,6 +28,7 @@ class OrganizationProfileData extends Data
         return new self(
             id: $organization->id,
             name: $organization->name,
+            slug: $organization->slug,
             email: $organization->email,
             cityId: $organization->city_id,
             countryId: $organization->city?->country_id,
