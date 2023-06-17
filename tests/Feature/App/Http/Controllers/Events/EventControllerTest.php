@@ -101,6 +101,23 @@ it('can filter event by organization id', function () {
         ->toHaveCount(5);
 });
 
+it('can delete own event', function() {
+    $event = Event::factory()->for($this->organization)->create();
+
+    $response = $this->deleteJson($this->getEndpoint($event->slug));
+
+    expect($response)->assertNoContent();
+    expect(Event::find($event->id))->toBeNull();
+});
+
+it('can not delete event for other organization', function() {
+    $event = Event::factory()->create();
+
+    $response = $this->deleteJson($this->getEndpoint($event->slug));
+
+    expect($response)->assertForbidden();
+});
+
 function getEventData(array $attributes = [])
 {
     return array_merge([
