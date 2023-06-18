@@ -150,6 +150,10 @@ return [
     'url' => 'The :attribute field must be a valid URL.',
     'ulid' => 'The :attribute field must be a valid ULID.',
     'uuid' => 'The :attribute field must be a valid UUID.',
+    'event_full' => "Can't enroll! The event is full.",
+    'already_enrolled' => "Can't enroll! You are already enrolled for this event.",
+    'too_young' => "Can't enroll! You need to be at least :age years old.",
+    'transition_not_allowed' => "Can't change status from :from to :to.",
 
     /*
     |--------------------------------------------------------------------------
@@ -184,6 +188,11 @@ return [
         'filter' => [
             'country_id' => 'country',
         ],
+        'state' => [
+            'approved' => 'approved',
+            'rejected' => 'rejected',
+            'pending' => 'pending',
+        ]
     ],
 
 ];
