@@ -3,7 +3,6 @@
 namespace Domain\Events\DTOs;
 
 use Domain\Events\Models\Event;
-use Domain\Organization\DTOs\OrganizationData;
 use Domain\Organization\DTOs\OrganizationProfileData;
 use Illuminate\Support\Carbon;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
@@ -50,9 +49,9 @@ class EventData extends Data
             requiredVolunteersAmount: $event->required_volunteers_amount,
             minimumParticipantAge: $event->minimum_participant_age,
             cover: $event->cover,
-            eventTypes: Lazy::whenLoaded('eventTypes', $event, fn() => $event->eventTypes),
-            organization: Lazy::whenLoaded('organization', $event, fn() => OrganizationProfileData::from($event->organization)),
-            enrollments: Lazy::whenLoaded('enrollments', $event, fn() => EnrollmentData::collection($event->approvedEnrollments)),
+            eventTypes: Lazy::whenLoaded('eventTypes', $event, fn () => $event->eventTypes),
+            organization: Lazy::whenLoaded('organization', $event, fn () => OrganizationProfileData::from($event->organization)),
+            enrollments: Lazy::whenLoaded('enrollments', $event, fn () => EnrollmentData::collection($event->approvedEnrollments)),
             isFull: $event->isFull,
             enrollmentsCount: $event->enrollmentsCount,
         );

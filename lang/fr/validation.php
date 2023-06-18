@@ -120,7 +120,7 @@ return [
     'event_full' => "Impossible de s'inscrire ! L'événement est complet.",
     'already_enrolled' => "Impossible de s'inscrire ! Vous êtes déjà inscrit à cet événement.",
     'too_young' => "Impossible de s'inscrire ! Vous devez avoir au moins :age ans pour vous inscrire à cet événement.",
-    'transition_not_allowed' => "Impossible de changer le statut de :from à :to.",
+    'transition_not_allowed' => 'Impossible de changer le statut de :from à :to.',
 
     /*
     |--------------------------------------------------------------------------
@@ -159,7 +159,7 @@ return [
             'approved' => 'approuvé',
             'rejected' => 'rejeté',
             'pending' => 'en attente',
-        ]
+        ],
     ],
 
 ];

@@ -192,7 +192,7 @@ return [
             'approved' => 'approved',
             'rejected' => 'rejected',
             'pending' => 'pending',
-        ]
+        ],
     ],
 
 ];
