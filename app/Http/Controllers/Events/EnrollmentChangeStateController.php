@@ -3,16 +3,13 @@
 namespace App\Http\Controllers\Events;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Events\EnrollEventRequest;
 use App\Http\Requests\Events\EnrollmentChangeStateRequest;
 use Domain\Events\DTOs\EnrollmentData;
 use Domain\Events\Enums\EnrollmentStateEnum;
 use Domain\Events\Models\Enrollment;
-use Domain\Events\Models\Event;
 use Domain\Events\States\Approved;
 use Domain\Events\States\Rejected;
 use Illuminate\Http\JsonResponse;
-use Spatie\ModelStates\Exceptions\TransitionNotAllowed;
 use Spatie\ModelStates\Exceptions\TransitionNotFound;
 
 class EnrollmentChangeStateController extends Controller

@@ -21,7 +21,7 @@ class EnrollmentChangeStateRequest extends FormRequest
             'state' => [
                 'required',
                 new ValidStateRule(EnrollmentState::class),
-            ]
+            ],
         ];
     }
 }

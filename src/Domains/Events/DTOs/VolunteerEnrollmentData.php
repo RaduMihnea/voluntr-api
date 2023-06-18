@@ -4,13 +4,11 @@ namespace Domain\Events\DTOs;
 
 use Domain\Events\Enums\EnrollmentStateEnum;
 use Domain\Events\Models\Enrollment;
-use Domain\Events\States\EnrollmentState;
 use Illuminate\Support\Arr;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
-use Spatie\LaravelData\Lazy;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
 
 #[MapName(SnakeCaseMapper::class)]
@@ -28,7 +26,8 @@ class VolunteerEnrollmentData extends Data
     ) {
     }
 
-    public static function fromEnrollment(Enrollment $enrollment) {
+    public static function fromEnrollment(Enrollment $enrollment)
+    {
         return new self(
             id: $enrollment->id,
             name: $enrollment->event?->name ?? $enrollment->event_name,

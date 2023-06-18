@@ -27,7 +27,7 @@ class EnrollmentFactory extends Factory
                 EnrollmentStateEnum::APPROVED,
                 EnrollmentStateEnum::PENDING,
                 EnrollmentStateEnum::REJECTED,
-            ])
+            ]),
         ];
     }
 

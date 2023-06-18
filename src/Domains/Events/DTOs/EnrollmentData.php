@@ -21,7 +21,7 @@ class EnrollmentData extends Data
     {
         return new self(
             avatar: $enrollment->volunteer->avatar,
-            initials: Str::ucfirst($enrollment->volunteer->first_name[0] . $enrollment->volunteer->last_name[0]),
+            initials: Str::ucfirst($enrollment->volunteer->first_name[0].$enrollment->volunteer->last_name[0]),
         );
     }
 }

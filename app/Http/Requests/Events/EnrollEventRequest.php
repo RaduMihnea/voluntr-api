@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\Events;
 
-use Domain\Organization\Models\Organization;
 use Domain\Volunteer\Models\Volunteer;
 use Illuminate\Foundation\Http\FormRequest;
 

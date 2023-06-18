@@ -23,7 +23,8 @@ class EventEnrollmentData extends Data
     ) {
     }
 
-    public static function fromEnrollment(Enrollment $enrollment) {
+    public static function fromEnrollment(Enrollment $enrollment)
+    {
         return new self(
             id: $enrollment->id,
             fullName: $enrollment->volunteer->full_name,
