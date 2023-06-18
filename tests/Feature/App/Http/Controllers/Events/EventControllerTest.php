@@ -14,7 +14,7 @@ beforeEach(function () {
 });
 
 it('can retrieve all events', function () {
-    Event::factory()->count(50)->create();
+    Event::factory()->count(50)->for($this->organization)->create();
 
     $response = $this->getJson($this->getEndpoint());
 
@@ -25,11 +25,11 @@ it('can retrieve all events', function () {
 });
 
 it('can filter event by date', function () {
-    Event::factory()->count(10)->create([
+    Event::factory()->for($this->organization)->count(10)->create([
         'starts_at' => now()->addDays(1),
         'ends_at' => now()->addDays(2),
     ]);
-    Event::factory()->count(5)->create([
+    Event::factory()->for($this->organization)->count(5)->create([
         'starts_at' => now()->addWeek(),
         'ends_at' => now()->addWeeks(2),
     ]);
@@ -50,9 +50,9 @@ it('can filter event by date', function () {
 it('can filter event by types', function () {
     $eventTypes = EventType::factory()->count(2)->create();
 
-    Event::factory()->count(5)->hasAttached($eventTypes[0])->create();
-    Event::factory()->count(5)->hasAttached($eventTypes[1])->create();
-    Event::factory()->count(5)->create();
+    Event::factory()->for($this->organization)->count(5)->hasAttached($eventTypes[0])->create();
+    Event::factory()->for($this->organization)->count(5)->hasAttached($eventTypes[1])->create();
+    Event::factory()->for($this->organization)->count(5)->create();
 
     $query = $this->apiQuery()->filters([
         'event_type' => $eventTypes->pluck('id')->toArray(),
@@ -68,8 +68,8 @@ it('can filter event by types', function () {
 });
 
 it('can filter event by minimum age', function () {
-    Event::factory()->count(5)->create(['minimum_participant_age' => 18]);
-    Event::factory()->count(5)->create(['minimum_participant_age' => 14]);
+    Event::factory()->for($this->organization)->count(5)->create(['minimum_participant_age' => 18]);
+    Event::factory()->for($this->organization)->count(5)->create(['minimum_participant_age' => 14]);
 
     $query = $this->apiQuery()->filters([
         'min_age' => 18,
