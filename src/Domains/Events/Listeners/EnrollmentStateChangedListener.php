@@ -3,7 +3,6 @@
 namespace Domain\Events\Listeners;
 
 use Domain\Events\Enums\EnrollmentStateEnum;
-use Domain\Events\States\Approved;
 use Spatie\ModelStates\Events\StateChanged;
 
 class EnrollmentStateChangedListener

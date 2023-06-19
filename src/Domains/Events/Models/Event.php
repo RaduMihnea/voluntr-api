@@ -40,7 +40,7 @@ class Event extends Model implements HasMedia
     protected $appends = [
         'is_full',
         'enrollments_count',
-        'can_enroll'
+        'can_enroll',
     ];
 
     protected static function newFactory(): EventFactory
@@ -83,7 +83,7 @@ class Event extends Model implements HasMedia
     public function canEnroll(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->enrollments()->where('volunteer_id', auth()->id())->doesntExist() && !$this->is_full,
+            get: fn () => $this->enrollments()->where('volunteer_id', auth()->id())->doesntExist() && ! $this->is_full,
         );
     }
 

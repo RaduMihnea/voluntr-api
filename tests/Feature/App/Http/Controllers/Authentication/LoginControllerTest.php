@@ -20,7 +20,7 @@ it('can login a volunteer', function () {
         ->assertCreated()
         ->whereAllTypes([
             'token' => 'string',
-            'name' => 'string',
+            'profile' => 'array',
         ]);
 });
 
@@ -36,7 +36,7 @@ it('can login an organization', function () {
         ->assertCreated()
         ->whereAllTypes([
             'token' => 'string',
-            'name' => 'string',
+            'profile' => 'array',
         ]);
 });
 
