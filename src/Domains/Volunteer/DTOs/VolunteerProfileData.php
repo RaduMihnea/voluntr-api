@@ -15,6 +15,7 @@ class VolunteerProfileData extends Data
         public int $id,
         public string $firstName,
         public string $lastName,
+        public string $slug,
         public string $email,
         public ?string $phone,
         public ?Carbon $birthday,
@@ -23,6 +24,7 @@ class VolunteerProfileData extends Data
         public ?string $summary,
         public ?string $description,
         public ?string $avatar,
+        public ?int $reputationLevel,
     ) {
     }
 
@@ -32,6 +34,7 @@ class VolunteerProfileData extends Data
             id: $volunteer->id,
             firstName: $volunteer->first_name,
             lastName: $volunteer->last_name,
+            slug: $volunteer->slug,
             email: $volunteer->email,
             phone: $volunteer->phone,
             birthday: $volunteer->birthday,
@@ -40,6 +43,7 @@ class VolunteerProfileData extends Data
             summary: $volunteer->summary,
             description: $volunteer->description,
             avatar: $volunteer->avatar,
+            reputationLevel: $volunteer->reputation_level,
         );
     }
 }

@@ -1,0 +1,11 @@
+[
+    {"translation_slug": "animals", "color": "orange"},
+    {"translation_slug": "art", "color": "pink"},
+    {"translation_slug": "sports", "color": "red"},
+    {"translation_slug": "music", "color": "grape"},
+    {"translation_slug": "community", "color": "cyan"},
+    {"translation_slug": "social", "color": "yellow"},
+    {"translation_slug": "education", "color": "blue"},
+    {"translation_slug": "children", "color": "teal"},
+    {"translation_slug": "environment", "color": "green"}
+]
