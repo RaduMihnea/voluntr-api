@@ -3,6 +3,8 @@
 namespace Domain\Volunteer\Models;
 
 use Database\Factories\VolunteerFactory;
+use Domain\Badges\Actions\RegisterBadgeProgressAction;
+use Domain\Badges\Models\BadgeProgress;
 use Domain\Regions\Models\City;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -102,5 +104,10 @@ class Volunteer extends Authenticatable implements HasMedia
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function registerBadgeProgress(string $badgeProgressSlug): BadgeProgress
+    {
+        return app(RegisterBadgeProgressAction::class)($badgeProgressSlug, $this->id);
     }
 }

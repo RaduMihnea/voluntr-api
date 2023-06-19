@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Database\State\EnsureBadgesArePresent;
 use Database\State\EnsureCitiesArePresent;
 use Database\State\EnsureCountriesArePresent;
 use Database\State\EnsureEventTypesArePresent;
@@ -19,6 +20,7 @@ class EnsureDatabaseStateIsLoaded extends Command
             new EnsureCountriesArePresent(),
             new EnsureCitiesArePresent(),
             new EnsureEventTypesArePresent(),
+            new EnsureBadgesArePresent(),
         ])->each->__invoke();
     }
 }
