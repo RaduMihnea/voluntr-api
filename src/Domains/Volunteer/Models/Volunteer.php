@@ -3,6 +3,8 @@
 namespace Domain\Volunteer\Models;
 
 use Database\Factories\VolunteerFactory;
+use Domain\Badges\Actions\RegisterBadgeProgressAction;
+use Domain\Badges\Models\BadgeProgress;
 use Domain\Regions\Models\City;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -33,6 +35,7 @@ class Volunteer extends Authenticatable implements HasMedia
         'phone',
         'birthday',
         'city_id',
+        'reputation_points',
         'summary',
         'description',
     ];
@@ -95,12 +98,17 @@ class Volunteer extends Authenticatable implements HasMedia
     public function reputationLevel(): Attribute
     {
         return Attribute::make(
-            get: fn () => 0
+            get: fn () => round(0.07 * sqrt($this->reputation_points))
         );
     }
 
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function registerBadgeProgress(string $badgeProgressSlug): BadgeProgress
+    {
+        return app(RegisterBadgeProgressAction::class)($badgeProgressSlug, $this->id);
     }
 }

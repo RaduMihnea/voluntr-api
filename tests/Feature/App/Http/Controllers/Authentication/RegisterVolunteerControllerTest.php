@@ -11,8 +11,7 @@ it('can register a user', function () {
         ->assertCreated()
         ->whereAllTypes([
             'id' => 'integer',
-            'name' => 'string',
-            'email' => 'string',
+            'profile' => 'array',
             'role' => 'string',
             'token' => 'string',
         ]);

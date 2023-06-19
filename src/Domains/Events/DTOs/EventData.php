@@ -33,6 +33,7 @@ class EventData extends Data
         public Lazy|DataCollection $enrollments,
         public ?bool $isFull,
         public array $enrollmentsCount,
+        public ?bool $canEnroll,
     ) {
     }
 
@@ -54,6 +55,7 @@ class EventData extends Data
             enrollments: Lazy::whenLoaded('enrollments', $event, fn () => EnrollmentData::collection($event->approvedEnrollments)),
             isFull: $event->isFull,
             enrollmentsCount: $event->enrollmentsCount,
+            canEnroll: $event->can_enroll,
         );
     }
 }

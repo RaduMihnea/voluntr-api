@@ -1,0 +1,240 @@
+[
+    {
+        "name": "profile_completed_i",
+        "icon": "icon_mood_check",
+        "badge_progress_slug": "profile-completed",
+        "required_completion_amount": "1",
+        "awarded_points": "100"
+    },
+    {
+        "name": "enthusiast_i",
+        "icon": "icon_mood_happy",
+        "badge_progress_slug": "enrollment",
+        "required_completion_amount": "1",
+        "awarded_points": "150"
+    },
+    {
+        "name": "enthusiast_ii",
+        "icon": "icon_mood_happy",
+        "badge_progress_slug": "enrollment",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "enthusiast_iii",
+        "icon": "icon_mood_happy",
+        "badge_progress_slug": "enrollment",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    },
+    {
+        "name": "participant_i",
+        "icon": "icon_mood_nerd",
+        "badge_progress_slug": "enrollment-approved",
+        "required_completion_amount": "5",
+        "awarded_points": "200"
+    },
+    {
+        "name": "participant_ii",
+        "icon": "icon_mood_nerd",
+        "badge_progress_slug": "enrollment-approved",
+        "required_completion_amount": "25",
+        "awarded_points": "500"
+    },
+    {
+        "name": "participant_iii",
+        "icon": "icon_mood_nerd",
+        "badge_progress_slug": "enrollment-approved",
+        "required_completion_amount": "50",
+        "awarded_points": "1500"
+    },
+    {
+        "name": "animal_lover_i",
+        "icon": "icon_dog",
+        "badge_progress_slug": "enrollment-animals",
+        "required_completion_amount": "1",
+        "awarded_points": "200"
+    },
+    {
+        "name": "animal_lover_ii",
+        "icon": "icon_dog",
+        "badge_progress_slug": "enrollment-animals",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "animal_lover_iii",
+        "icon": "icon_dog",
+        "badge_progress_slug": "enrollment-animals",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    },
+    {
+        "name": "artist_i",
+        "icon": "icon_scribble",
+        "badge_progress_slug": "enrollment-art",
+        "required_completion_amount": "1",
+        "awarded_points": "200"
+    },
+    {
+        "name": "artist_ii",
+        "icon": "icon_scribble",
+        "badge_progress_slug": "enrollment-art",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "artist_iii",
+        "icon": "icon_scribble",
+        "badge_progress_slug": "enrollment-art",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    },
+    {
+        "name": "sports_i",
+        "icon": "icon_run",
+        "badge_progress_slug": "enrollment-sports",
+        "required_completion_amount": "1",
+        "awarded_points": "200"
+    },
+    {
+        "name": "sports_ii",
+        "icon": "icon_run",
+        "badge_progress_slug": "enrollment-sports",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "sports_iii",
+        "icon": "icon_run",
+        "badge_progress_slug": "enrollment-sports",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    },
+    {
+        "name": "musician_i",
+        "icon": "icon_music",
+        "badge_progress_slug": "enrollment-music",
+        "required_completion_amount": "1",
+        "awarded_points": "200"
+    },
+    {
+        "name": "musician_ii",
+        "icon": "icon_music",
+        "badge_progress_slug": "enrollment-music",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "musician_iii",
+        "icon": "icon_music",
+        "badge_progress_slug": "enrollment-music",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    },
+    {
+        "name": "community_member_i",
+        "icon": "icon_world",
+        "badge_progress_slug": "enrollment-community",
+        "required_completion_amount": "1",
+        "awarded_points": "200"
+    },
+    {
+        "name": "community_member_ii",
+        "icon": "icon_world",
+        "badge_progress_slug": "enrollment-community",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "community_member_iii",
+        "icon": "icon_world",
+        "badge_progress_slug": "enrollment-community",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    },
+    {
+        "name": "helping_hand_i",
+        "icon": "icon_users",
+        "badge_progress_slug": "enrollment-social",
+        "required_completion_amount": "1",
+        "awarded_points": "200"
+    },
+    {
+        "name": "helping_hand_ii",
+        "icon": "icon_users",
+        "badge_progress_slug": "enrollment-social",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "helping_hand_iii",
+        "icon": "icon_users",
+        "badge_progress_slug": "enrollment-social",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    },
+    {
+        "name": "teacher_i",
+        "icon": "icon_book",
+        "badge_progress_slug": "enrollment-education",
+        "required_completion_amount": "1",
+        "awarded_points": "200"
+    },
+    {
+        "name": "teacher_ii",
+        "icon": "icon_book",
+        "badge_progress_slug": "enrollment-education",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "teacher_iii",
+        "icon": "icon_book",
+        "badge_progress_slug": "enrollment-education",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    },
+    {
+        "name": "child_carer_i",
+        "icon": "icon_mood_boy",
+        "badge_progress_slug": "enrollment-children",
+        "required_completion_amount": "1",
+        "awarded_points": "200"
+    },
+    {
+        "name": "child_carer_ii",
+        "icon": "icon_mood_boy",
+        "badge_progress_slug": "enrollment-children",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "child_carer_iii",
+        "icon": "icon_mood_boy",
+        "badge_progress_slug": "enrollment-children",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    },
+    {
+        "name": "environmentalist_i",
+        "icon": "icon_seeding",
+        "badge_progress_slug": "enrollment-environment",
+        "required_completion_amount": "1",
+        "awarded_points": "200"
+    },
+    {
+        "name": "environmentalist_ii",
+        "icon": "icon_seeding",
+        "badge_progress_slug": "enrollment-environment",
+        "required_completion_amount": "10",
+        "awarded_points": "500"
+    },
+    {
+        "name": "environmentalist_iii",
+        "icon": "icon_seeding",
+        "badge_progress_slug": "enrollment-environment",
+        "required_completion_amount": "25",
+        "awarded_points": "1000"
+    }
+]

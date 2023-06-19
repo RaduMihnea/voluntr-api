@@ -12,9 +12,8 @@ it('can register an organization', function () {
         ->whereAllTypes([
             'id' => 'integer',
             'token' => 'string',
-            'name' => 'string',
             'role' => 'string',
-            'email' => 'string',
+            'profile' => 'array',
         ]);
 });
 

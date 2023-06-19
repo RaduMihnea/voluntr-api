@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Events;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Events\EnrollEventRequest;
+use Domain\Badges\Enums\BadgeProgressSlugsEnum;
 use Domain\Events\DTOs\EnrollmentData;
 use Domain\Events\Models\Enrollment;
 use Domain\Events\Models\Event;
@@ -31,6 +32,8 @@ class EventEnrollController extends Controller
             'volunteer_id' => auth()->user()->id,
             'event_id' => $event->id,
         ]);
+
+        auth()->user()->registerBadgeProgress(BadgeProgressSlugsEnum::ENROLLMENT);
 
         return EnrollmentData::from($enrollment);
     }
