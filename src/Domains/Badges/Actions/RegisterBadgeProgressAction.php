@@ -8,6 +8,15 @@ class RegisterBadgeProgressAction
 {
     public function __invoke(string $slug, int $volunteerId): BadgeProgress
     {
+        $badgeProgress = $this->updateOrCreateBadgeProgress($slug, $volunteerId);
+
+        app(AwardReputationPointsAction::class)($badgeProgress);
+
+        return $badgeProgress;
+    }
+
+    private function updateOrCreateBadgeProgress(string $slug, int $volunteerId): BadgeProgress
+    {
         $badgeProgress = BadgeProgress::where('slug', $slug)->where('volunteer_id', $volunteerId)->first();
 
         if ($badgeProgress) {
@@ -21,8 +30,6 @@ class RegisterBadgeProgressAction
             'slug' => $slug,
             'progress' => 1,
         ]);
-
-        app(AwardReputationPointsAction::class)($badgeProgress);
 
         return $badgeProgress;
     }

@@ -35,6 +35,7 @@ class Volunteer extends Authenticatable implements HasMedia
         'phone',
         'birthday',
         'city_id',
+        'reputation_points',
         'summary',
         'description',
     ];
@@ -97,7 +98,7 @@ class Volunteer extends Authenticatable implements HasMedia
     public function reputationLevel(): Attribute
     {
         return Attribute::make(
-            get: fn () => 0
+            get: fn () => round(0.07 * sqrt($this->reputation_points))
         );
     }
 

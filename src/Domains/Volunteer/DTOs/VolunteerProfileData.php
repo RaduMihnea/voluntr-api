@@ -24,6 +24,7 @@ class VolunteerProfileData extends Data
         public ?string $summary,
         public ?string $description,
         public ?string $avatar,
+        public ?int $reputationLevel,
     ) {
     }
 
@@ -42,6 +43,7 @@ class VolunteerProfileData extends Data
             summary: $volunteer->summary,
             description: $volunteer->description,
             avatar: $volunteer->avatar,
+            reputationLevel: $volunteer->reputation_level,
         );
     }
 }

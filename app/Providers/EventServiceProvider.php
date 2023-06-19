@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
+use Domain\Events\Listeners\EnrollmentStateChangedListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Listeners\EnrollmentStateChangedListener;
 use Spatie\ModelStates\Events\StateChanged;
 
 class EventServiceProvider extends ServiceProvider
