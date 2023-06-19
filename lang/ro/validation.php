@@ -147,6 +147,10 @@ return [
     'uploaded' => 'Câmpul :attribute nu a reușit să se încarce.',
     'url' => 'Formatul câmpului :attribute este invalid.',
     'uuid' => 'Câmpul :attribute trebuie să fie un UUID valid.',
+    'event_full' => 'Nu va puteți înscrie! Evenimentul este plin.',
+    'already_enrolled' => 'Nu va puteți înscrie! Sunteți deja înscris la acest eveniment.',
+    'too_young' => 'Nu va puteți înscrie! Trebuie să aveți cel puțin :age ani.',
+    'transition_not_allowed' => 'Nu se poate schimba starea de la :from la :to.',
 
     /*
     |--------------------------------------------------------------------------
@@ -184,6 +188,11 @@ return [
         'terms' => 'termeni și condiții',
         'filter' => [
             'country_id' => 'țară',
+        ],
+        'state' => [
+            'approved' => 'acceptat',
+            'rejected' => 'respins',
+            'pending' => 'în așteptare',
         ],
     ],
 

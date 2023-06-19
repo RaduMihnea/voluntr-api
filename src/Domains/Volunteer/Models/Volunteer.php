@@ -3,6 +3,8 @@
 namespace Domain\Volunteer\Models;
 
 use Database\Factories\VolunteerFactory;
+use Domain\Badges\Actions\RegisterBadgeProgressAction;
+use Domain\Badges\Models\BadgeProgress;
 use Domain\Regions\Models\City;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -27,11 +29,13 @@ class Volunteer extends Authenticatable implements HasMedia
     protected $fillable = [
         'first_name',
         'last_name',
+        'slug',
         'email',
         'password',
         'phone',
         'birthday',
         'city_id',
+        'reputation_points',
         'summary',
         'description',
     ];
@@ -77,8 +81,34 @@ class Volunteer extends Authenticatable implements HasMedia
         );
     }
 
+    public function fullName(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => "{$this->first_name} {$this->last_name}"
+        );
+    }
+
+    public function age(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => now()->diffInYears($this->birthday)
+        );
+    }
+
+    public function reputationLevel(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => round(0.07 * sqrt($this->reputation_points))
+        );
+    }
+
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function registerBadgeProgress(string $badgeProgressSlug): BadgeProgress
+    {
+        return app(RegisterBadgeProgressAction::class)($badgeProgressSlug, $this->id);
     }
 }

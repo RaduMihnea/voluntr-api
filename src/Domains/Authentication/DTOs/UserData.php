@@ -3,7 +3,9 @@
 namespace Domain\Authentication\DTOs;
 
 use Domain\Authentication\Enums\RoleEnum;
+use Domain\Organization\DTOs\OrganizationProfileData;
 use Domain\Organization\Models\Organization;
+use Domain\Volunteer\DTOs\VolunteerProfileData;
 use Domain\Volunteer\Models\Volunteer;
 use Spatie\LaravelData\Attributes\MapInputName;
 use Spatie\LaravelData\Data;
@@ -14,10 +16,9 @@ class UserData extends Data
 {
     public function __construct(
         public int $id,
-        public string $name,
-        public string $email,
         public string $role,
         public string $token,
+        public Data $profile,
     ) {
     }
 
@@ -25,10 +26,9 @@ class UserData extends Data
     {
         return new self(
             id: $organization->id,
-            name: $organization->name,
-            email: $organization->email,
             role: RoleEnum::ORGANIZATION->value,
-            token: $organization->createToken('Voluntr')->plainTextToken
+            token: $organization->createToken('Voluntr')->plainTextToken,
+            profile: OrganizationProfileData::fromOrganization($organization)
         );
     }
 
@@ -36,10 +36,9 @@ class UserData extends Data
     {
         return new self(
             id: $volunteer->id,
-            name: "{$volunteer->first_name} {$volunteer->last_name}",
-            email: $volunteer->email,
             role: RoleEnum::VOLUNTEER->value,
-            token: $volunteer->createToken('Voluntr')->plainTextToken
+            token: $volunteer->createToken('Voluntr')->plainTextToken,
+            profile: VolunteerProfileData::fromVolunteer($volunteer)
         );
     }
 }

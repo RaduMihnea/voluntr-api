@@ -22,7 +22,7 @@ class EventController extends Controller
     {
         $query = new IndexEventQuery($request);
 
-        return EventData::collection($query->paginate());
+        return EventData::collection($query->paginate($request->per_page));
     }
 
     public function store(StoreEventRequest $request, CreateEventAction $createEventAction): EventData

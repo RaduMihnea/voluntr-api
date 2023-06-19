@@ -21,4 +21,5 @@ Route::prefix('v1')
         require base_path('routes/v1/organization.php');
         require base_path('routes/v1/regions.php');
         require base_path('routes/v1/events.php');
+        require base_path('routes/v1/badges.php');
     });

@@ -12,7 +12,12 @@ class IndexEventQuery extends QueryBuilder
 {
     public function __construct(IndexEventRequest $request)
     {
-        $query = Event::query();
+        $query = Event::query()
+            ->whereHas('organization', function ($query) {
+                $query->whereHas('city', function ($query) {
+                    $query->where('country_id', auth()->user()->city->country_id);
+                });
+            });
 
         parent::__construct($query, $request);
 
@@ -31,6 +36,7 @@ class IndexEventQuery extends QueryBuilder
                 }),
                 AllowedFilter::exact('organization_id'),
             ])
+            ->allowedIncludes(['organization', 'eventTypes', 'enrollments'])
             ->defaultSort('-starts_at');
     }
 }
