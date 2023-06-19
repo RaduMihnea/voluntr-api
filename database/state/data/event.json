@@ -1,0 +1,302 @@
+[
+    {
+        "name": "Colectare Alimente",
+        "slug": "colectare-alimente",
+        "description": "Alăturați-vă nouă în colectarea și distribuția de alimente pentru familiile nevoiașe.",
+        "starts_at": "2023-07-28 09:00:00",
+        "ends_at": "2023-07-28 12:00:00",
+        "organization_id": 2,
+        "required_volunteers_amount": 25,
+        "minimum_participant_age": 14
+    },
+    {
+        "name": "Curățenie Comunitară",
+        "slug": "curatenie-comunitara",
+        "description": "Ajutați-ne să curățăm parcurile și străzile locale pentru un mediu mai curat.",
+        "starts_at": "2023-07-31 08:00:00",
+        "ends_at": "2023-07-31 20:00:00",
+        "organization_id": 3,
+        "required_volunteers_amount": 50,
+        "minimum_participant_age": 16
+    },
+    {
+        "name": "Atelier de Arte pentru Copii",
+        "slug": "atelier-arte-copii",
+        "description": "Ajutați-ne să organizăm un atelier de arte pentru copii.",
+        "starts_at": "2023-08-01 09:00:00",
+        "ends_at": "2023-08-01 12:00:00",
+        "organization_id": 1,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 14
+    },
+    {
+        "name": "Consiliere pentru Tineri",
+        "slug": "consiliere-tineri",
+        "description": "Oferim consiliere și sprijin emoțional pentru tineri în dificultate.",
+        "starts_at": "2023-08-02 11:00:00",
+        "ends_at": "2023-08-02 17:00:00",
+        "organization_id": 2,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 25
+    },
+    {
+        "name": "Promovare a Voluntariatului",
+        "slug": "promovare-voluntariat",
+        "description": "Vino să promovăm importanța voluntariatului în comunitatea noastră.",
+        "starts_at": "2023-08-03 09:00:00",
+        "ends_at": "2023-08-03 12:00:00",
+        "organization_id": 1,
+        "required_volunteers_amount": 15,
+        "minimum_participant_age": 16
+    },
+    {
+        "name": "Colectare de Haine",
+        "slug": "colectare-haine",
+        "description": "Ajutați-ne să colectăm haine pentru persoanele nevoiașe.",
+        "starts_at": "2023-08-04 09:00:00",
+        "ends_at": "2023-08-04 12:00:00",
+        "organization_id": 2,
+        "required_volunteers_amount": 15,
+        "minimum_participant_age": 16
+    },
+    {
+        "name": "Curatare Bahlui",
+        "slug": "curatare-bahlui",
+        "description": "Ajutați-ne să curățăm râul Bahlui.",
+        "starts_at": "2023-08-05 09:00:00",
+        "ends_at": "2023-08-05 12:00:00",
+        "organization_id": 3,
+        "required_volunteers_amount": 50,
+        "minimum_participant_age": 18
+    },
+    {
+        "name": "Training de Abilități IT",
+        "slug": "training-it",
+        "description": "Ajutați-ne să organizăm un training de abilități IT pentru persoanele nevoiașe.",
+        "starts_at": "2023-08-06 09:00:00",
+        "ends_at": "2023-08-06 12:00:00",
+        "organization_id": 1,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 30
+    },
+    {
+        "name": "Cursa de Biciclete",
+        "slug": "cursa-biciclete",
+        "description": "Ajutați-ne să organizăm o cursă de biciclete pentru a promova un stil de viață sănătos.",
+        "starts_at": "2023-08-07 09:00:00",
+        "ends_at": "2023-08-07 12:00:00",
+        "organization_id": 2,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 18
+    },
+    {
+        "name": "Licitatie de Arta",
+        "slug": "licitatie-arta",
+        "description": "Ajutați-ne să organizăm o licitație de artă pentru a strânge fonduri pentru persoanele nevoiașe.",
+        "starts_at": "2023-08-08 09:00:00",
+        "ends_at": "2023-08-08 12:00:00",
+        "organization_id": 3,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 18
+    },
+    {
+        "name": "Food Drive",
+        "slug": "food-drive",
+        "description": "Join us in collecting and distributing food for families in need.",
+        "starts_at": "2023-07-28 09:00:00",
+        "ends_at": "2023-07-28 12:00:00",
+        "organization_id": 4,
+        "required_volunteers_amount": 25,
+        "minimum_participant_age": 14
+    },
+    {
+        "name": "Community Cleanup",
+        "slug": "community-cleanup",
+        "description": "Help us clean up local parks and streets for a cleaner environment.",
+        "starts_at": "2023-07-31 08:00:00",
+        "ends_at": "2023-07-31 20:00:00",
+        "organization_id": 6,
+        "required_volunteers_amount": 50,
+        "minimum_participant_age": 16
+    },
+    {
+        "name": "Youth Mentoring Program",
+        "slug": "youth-mentoring",
+        "description": "Help us organize a youth mentoring program.",
+        "starts_at": "2023-08-01 09:00:00",
+        "ends_at": "2023-08-01 12:00:00",
+        "organization_id": 4,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 14
+    },
+    {
+        "name": "Elderly Care Support",
+        "slug": "elderly-care",
+        "description": "We provide counseling and emotional support for elderly people in need.",
+        "starts_at": "2023-08-02 11:00:00",
+        "ends_at": "2023-08-02 17:00:00",
+        "organization_id": 5,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 25
+    },
+    {
+        "name": "Fundraising Gala Dinner",
+        "slug": "fundraising-gala-dinner",
+        "description": "Come help us raise funds for our cause.",
+        "starts_at": "2023-08-03 20:00:00",
+        "ends_at": "2023-08-03 23:00:00",
+        "organization_id": 5,
+        "required_volunteers_amount": 15,
+        "minimum_participant_age": 16
+    },
+    {
+        "name": "Cleaning Rivers",
+        "slug": "cleaning-rivers",
+        "description": "Help us clean some rivers.",
+        "starts_at": "2023-08-05 09:00:00",
+        "ends_at": "2023-08-05 12:00:00",
+        "organization_id": 6,
+        "required_volunteers_amount": 50,
+        "minimum_participant_age": 14
+    },
+    {
+        "name": "Clothes Donation",
+        "slug": "clothes-donation",
+        "description": "Help us collect and distribute clothes for families in need.",
+        "starts_at": "2023-08-06 09:00:00",
+        "ends_at": "2023-08-06 12:00:00",
+        "organization_id": 5,
+        "required_volunteers_amount": 25,
+        "minimum_participant_age": 14
+    },
+    {
+        "name": "IT Training skills",
+        "slug": "it-training-skills",
+        "description": "Help us organize an IT training program for people in need.",
+        "starts_at": "2023-08-07 09:00:00",
+        "ends_at": "2023-08-07 12:00:00",
+        "organization_id": 4,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 18
+    },
+    {
+        "name": "Bike Race",
+        "slug": "bike-race",
+        "description": "We're organizing a charitable bike race",
+        "starts_at": "2023-08-08 09:00:00",
+        "ends_at": "2023-08-08 12:00:00",
+        "organization_id": 5,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 18
+    },
+    {
+        "name": "Charity Concert",
+        "slug": "charity-concert",
+        "description": "We're organizing a charity concert to raise funds for our cause.",
+        "starts_at": "2023-08-09 09:00:00",
+        "ends_at": "2023-08-09 12:00:00",
+        "organization_id": 5,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 18
+    },
+    {
+        "name": "Collecte de Denrées Alimentaires",
+        "slug": "collecte-denrees-alimentaires",
+        "description": "Rejoignez-nous pour collecter et distribuer de la nourriture aux familles dans le besoin.",
+        "starts_at": "2023-07-28 09:00:00",
+        "ends_at": "2023-07-28 12:00:00",
+        "organization_id": 7,
+        "required_volunteers_amount": 25,
+        "minimum_participant_age": 14
+    },
+    {
+        "name": "Nettoyage de la Communauté",
+        "slug": "nettoyage-communaute",
+        "description": "Aidez-nous à nettoyer les parcs et les rues locales pour un environnement plus propre.",
+        "starts_at": "2023-07-31 08:00:00",
+        "ends_at": "2023-07-31 20:00:00",
+        "organization_id": 9,
+        "required_volunteers_amount": 50,
+        "minimum_participant_age": 16
+    },
+    {
+        "name": "Atelier d'Art pour Enfants",
+        "slug": "atelier-art-enfants",
+        "description": "Venez passer du temps avec les enfants lors d'un atelier d'art amusant et éducatif.",
+        "starts_at": "2023-08-01 09:00:00",
+        "ends_at": "2023-08-01 12:00:00",
+        "organization_id": 7,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 25
+    },
+    {
+        "name": "Soutien aux Personnes Âgées",
+        "slug": "soutien-personnes-agees",
+        "description": "Nous fournissons des conseils et un soutien émotionnel aux personnes âgées dans le besoin.",
+        "starts_at": "2023-08-02 11:00:00",
+        "ends_at": "2023-08-02 17:00:00",
+        "organization_id": 8,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 25
+    },
+    {
+        "name": "Campagne de Sensibilisation à l'Environnement",
+        "slug": "campagne-sensibilisation-environnement",
+        "description": "Rejoignez-nous pour sensibiliser les gens à l'importance de l'environnement.",
+        "starts_at": "2023-08-03 09:00:00",
+        "ends_at": "2023-08-03 12:00:00",
+        "organization_id": 9,
+        "required_volunteers_amount": 15,
+        "minimum_participant_age": 16
+    },
+    {
+        "name": "Dîner de Gala de Collecte de Fonds",
+        "slug": "diner-gala-collecte-fonds",
+        "description": "Nous organisons un dîner de gala pour collecter des fonds pour notre cause.",
+        "starts_at": "2023-08-05 09:00:00",
+        "ends_at": "2023-08-05 12:00:00",
+        "organization_id": 7,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 18
+    },
+    {
+        "name": "Collecte de Vêtements",
+        "slug": "collecte-vetements",
+        "description": "Aidez-nous à collecter et à distribuer des vêtements aux familles dans le besoin.",
+        "starts_at": "2023-08-06 09:00:00",
+        "ends_at": "2023-08-06 12:00:00",
+        "organization_id": 7,
+        "required_volunteers_amount": 25,
+        "minimum_participant_age": 14
+    },
+    {
+        "name": "Compétition de Vélo",
+        "slug": "competition-velo",
+        "description": "Nous organisons une course de vélo caritative",
+        "starts_at": "2023-08-08 09:00:00",
+        "ends_at": "2023-08-08 12:00:00",
+        "organization_id": 8,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 18
+    },
+    {
+        "name": "Concert de Bienfaisance",
+        "slug": "concert-bienfaisance",
+        "description": "Nous organisons un concert de bienfaisance pour collecter des fonds pour notre cause.",
+        "starts_at": "2023-08-09 09:00:00",
+        "ends_at": "2023-08-09 12:00:00",
+        "organization_id": 8,
+        "required_volunteers_amount": 10,
+        "minimum_participant_age": 18
+    },
+    {
+        "name": "Collecte de Denrées Alimentaires",
+        "slug": "collecte-denrees-alimentaires-2",
+        "description": "Rejoignez-nous pour collecter et distribuer de la nourriture aux familles dans le besoin.",
+        "starts_at": "2023-07-28 09:00:00",
+        "ends_at": "2023-07-28 12:00:00",
+        "organization_id": 7,
+        "required_volunteers_amount": 25,
+        "minimum_participant_age": 14
+    }
+]
