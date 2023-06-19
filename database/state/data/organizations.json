@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Ajuta Oamenii",
+        "slug": "ajuta-oamenii",
+        "email": "help@test.ro",
+        "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        "summary": "Oferim sprijin comunității prin voluntariat.",
+        "description": "Ajuta Oamenii este o organizație non-profit care se dedică sprijinirii comunității prin intermediul voluntariatului. Ne concentrăm pe proiecte sociale, educație și protecția mediului. Împreună putem face o schimbare pozitivă în societate.",
+        "city_id": 639
+    },
+    {
+        "name": "Speranța pentru Copii",
+        "slug": "speranta-pentru-copii",
+        "email": "hope@test.ro",
+        "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        "summary": "Facem o diferență în viețile copiilor.",
+        "description": "Speranța pentru Copii este o organizație caritabilă dedicată oferirii de sprijin și resurse pentru copiii defavorizați. Ne concentrăm pe îmbunătățirea accesului la educație, îngrijire medicală și nevoile de bază ale copiilor. Fiecare contribuție contează în schimbarea vieților lor.",
+        "city_id": 635
+    },
+    {
+        "name": "Natura Verde",
+        "slug": "natura-verde",
+        "email": "nature@test.ro",
+        "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        "summary": "Protejăm mediul înconjurător prin acțiuni concrete.",
+        "description": "Natura Verde este o organizație de mediu care se străduiește să protejeze natura și să promoveze un stil de viață durabil. Organizăm campanii de curățenie a mediului, plantări de copaci și activități educative pentru a crește gradul de conștientizare cu privire la protejarea resurselor naturale. Alătură-te nouă în lupta pentru un mediu mai verde și mai sănătos.",
+        "city_id": 636
+    },
+    {
+        "name": "Helping Hands",
+        "slug": "helping-hands",
+        "email": "help@test.com",
+        "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        "summary": "Supporting those in need through volunteer work.",
+        "description": "Helping Hands is a non-profit organization dedicated to supporting the community through volunteer work. We focus on social projects, education, and homelessness. Together, we can make a positive impact and help those in need.",
+        "city_id": 1163
+    },
+    {
+        "name": "Bright Futures",
+        "slug": "bright-futures",
+        "email": "hope@test.com",
+        "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        "summary": "Building a brighter future for young minds.",
+        "description": "Bright Futures is a charity organization committed to providing support and resources for underprivileged children. We strive to improve access to education, healthcare, and basic needs for children. Every contribution matters in changing their lives for the better.",
+        "city_id": 1166
+    },
+    {
+        "name": "Green Earth",
+        "slug": "green-earth",
+        "email": "nature@test.com",
+        "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        "summary": "Protecting the environment through actionable steps.",
+        "description": "Green Earth is an environmental organization dedicated to preserving nature and promoting sustainable living. We organize clean-up campaigns, tree plantations, and educational activities to raise awareness about the importance of conserving natural resources. Join us in the fight for a greener and healthier environment.",
+        "city_id": 1186
+    },
+    {
+        "name": "Main dans la Main",
+        "slug": "main-dans-la-main",
+        "email": "help@test.fr",
+        "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        "summary": "Soutien des personnes dans le besoin par le bénévolat.",
+        "description": "Main dans la Main est une organisation à but non lucratif dédiée au soutien de la communauté par le biais du bénévolat. Nous nous concentrons sur les projets sociaux, l'éducation et la lutte contre la précarité. Ensemble, nous pouvons avoir un impact positif et aider ceux qui en ont besoin.",
+        "city_id": 1
+    },
+    {
+        "name": "Avenir Radieux",
+        "slug": "avenir-radieux",
+        "email": "hope@test.fr",
+        "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        "summary": "Bâtir un avenir meilleur pour les jeunes esprits.",
+        "description": "Avenir Radieux est une organisation caritative engagée à fournir un soutien et des ressources aux enfants défavorisés. Nous nous efforçons d'améliorer l'accès à l'éducation, aux soins de santé et aux besoins de base des enfants. Chaque contribution compte pour changer leur vie en mieux.",
+        "city_id": 3
+    },
+    {
+        "name": "Terre Verte",
+        "slug": "terre-verte",
+        "email": "nature@test.fr",
+        "password": "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        "summary": "Protéger l'environnement par des actions concrètes.",
+        "description": "Terre Verte est une organisation environnementale qui s'efforce de préserver la nature et de promouvoir un mode de vie durable. Nous organisons des campagnes de nettoyage, des plantations d'arbres et des activités éducatives pour sensibiliser à l'importance de la conservation des ressources naturelles. Rejoignez-nous dans la lutte pour un environnement plus vert et plus sain.",
+        "city_id": 5
+    }
+]
