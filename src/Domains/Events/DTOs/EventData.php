@@ -34,6 +34,7 @@ class EventData extends Data
         public ?bool $isFull,
         public array $enrollmentsCount,
         public ?bool $canEnroll,
+        public ?string $location,
     ) {
     }
 
@@ -56,6 +57,7 @@ class EventData extends Data
             isFull: $event->isFull,
             enrollmentsCount: $event->enrollmentsCount,
             canEnroll: $event->can_enroll,
+            location: $event->organization->city->name
         );
     }
 }
