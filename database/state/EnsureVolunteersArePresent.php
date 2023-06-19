@@ -3,7 +3,6 @@
 namespace Database\State;
 
 use Domain\Volunteer\Models\Volunteer;
-use Illuminate\Support\Facades\DB;
 
 class EnsureVolunteersArePresent
 {
@@ -16,9 +15,9 @@ class EnsureVolunteersArePresent
         $volunteersJson = file_get_contents(database_path('state/data/volunteers.json'));
         $volunteers = json_decode($volunteersJson, true);
 
-        foreach($volunteers as $volunteer) {
+        foreach ($volunteers as $volunteer) {
             Volunteer::create([
-                ...$volunteer
+                ...$volunteer,
             ]);
         }
     }

@@ -3,7 +3,6 @@
 namespace Database\State;
 
 use Domain\Organization\Models\Organization;
-use Illuminate\Support\Facades\DB;
 
 class EnsureOrganizationsArePresent
 {
@@ -18,7 +17,7 @@ class EnsureOrganizationsArePresent
 
         foreach ($organizations as $organization) {
             Organization::create([
-                ...$organization
+                ...$organization,
             ]);
         }
     }
