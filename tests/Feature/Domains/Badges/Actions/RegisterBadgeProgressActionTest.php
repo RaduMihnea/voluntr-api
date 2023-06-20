@@ -1,19 +1,18 @@
 <?php
 
-use Domain\Badges\Actions\AwardReputationPointsAction;
 use Domain\Badges\Actions\RegisterBadgeProgressAction;
 use Domain\Badges\Models\BadgeProgress;
 use Domain\Volunteer\Models\Volunteer;
 
-it('can create new badge progress if it doesnt exist', function() {
+it('can create new badge progress if it doesnt exist', function () {
    $volunteer = Volunteer::factory()->create();
 
    app(RegisterBadgeProgressAction::class)('badge-slug', $volunteer->id);
 
     $this->assertDatabaseHas('badge_progress', [
-         'volunteer_id' => $volunteer->id,
-         'slug' => 'badge-slug',
-         'progress' => 1,
+        'volunteer_id' => $volunteer->id,
+        'slug' => 'badge-slug',
+        'progress' => 1,
     ]);
 });
 

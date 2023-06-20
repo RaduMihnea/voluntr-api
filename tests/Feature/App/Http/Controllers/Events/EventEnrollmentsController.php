@@ -1,8 +1,8 @@
 <?php
 
 use Domain\Events\Models\Enrollment;
-use Domain\Organization\Models\Organization;
 use Domain\Events\Models\Event;
+use Domain\Organization\Models\Organization;
 
 beforeEach(function () {
     $this->parentResource = 'events';
@@ -12,7 +12,7 @@ beforeEach(function () {
     $this->be($this->organization);
 });
 
-it('can retrieve all enrollments', function() {
+it('can retrieve all enrollments', function () {
     $event = Event::factory()->for($this->organization)->create();
 
     Enrollment::factory()->for($event)->approved()->count(5)->create();
@@ -26,7 +26,7 @@ it('can retrieve all enrollments', function() {
         ->toHaveCount(10);
 });
 
-it('cant retrieve enrollments of an event from another organization', function() {
+it('cant retrieve enrollments of an event from another organization', function () {
     $event = Event::factory()->create();
 
     Enrollment::factory()->for($event)->count(5)->create();

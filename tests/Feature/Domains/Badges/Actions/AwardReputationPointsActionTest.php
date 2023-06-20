@@ -4,7 +4,7 @@ use Domain\Badges\Actions\AwardReputationPointsAction;
 use Domain\Badges\Models\Badge;
 use Domain\Badges\Models\BadgeProgress;
 
-it('awards points for each completed badge', function() {
+it('awards points for each completed badge', function () {
     $badgeProgress = BadgeProgress::factory()->create([
         'progress' => 10,
     ]);

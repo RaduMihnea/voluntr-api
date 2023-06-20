@@ -2,8 +2,8 @@
 
 use Domain\Events\Enums\EnrollmentStateEnum;
 use Domain\Events\Models\Enrollment;
-use Domain\Organization\Models\Organization;
 use Domain\Events\Models\Event;
+use Domain\Organization\Models\Organization;
 
 beforeEach(function () {
     $this->parentResource = 'enrollments';

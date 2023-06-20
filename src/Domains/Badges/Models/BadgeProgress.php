@@ -3,7 +3,6 @@
 namespace Domain\Badges\Models;
 
 use Database\Factories\BadgeProgressFactory;
-use Database\Factories\EventTypeFactory;
 use Domain\Volunteer\Models\Volunteer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

@@ -113,6 +113,6 @@ function getCustomEventData(array $attributes = [])
         'event_name' => 'Some Event',
         'event_description' => fake()->paragraph(),
         'event_date' => '2023-01-01T00:00:00Z',
-        'event_type_id' => EventType::factory()->create()->id
+        'event_type_id' => EventType::factory()->create()->id,
     ], $attributes);
 }
