@@ -5,10 +5,12 @@ namespace Domain\Volunteer\Models;
 use Database\Factories\VolunteerFactory;
 use Domain\Badges\Actions\RegisterBadgeProgressAction;
 use Domain\Badges\Models\BadgeProgress;
+use Domain\Events\Models\Enrollment;
 use Domain\Regions\Models\City;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -102,13 +104,18 @@ class Volunteer extends Authenticatable implements HasMedia
         );
     }
 
+    public function registerBadgeProgress(string $badgeProgressSlug): BadgeProgress
+    {
+        return app(RegisterBadgeProgressAction::class)($badgeProgressSlug, $this->id);
+    }
+
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
     }
 
-    public function registerBadgeProgress(string $badgeProgressSlug): BadgeProgress
+    public function enrollments(): HasMany
     {
-        return app(RegisterBadgeProgressAction::class)($badgeProgressSlug, $this->id);
+        return $this->hasMany(Enrollment::class);
     }
 }

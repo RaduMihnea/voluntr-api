@@ -16,7 +16,7 @@ class BadgeData extends Data
         public string $requiredCompletionAmount,
         public string $awardedPoints,
         public string $progress,
-        public bool $isCompleted,
+        public bool $isCompleted = false,
     ) {
     }
 
