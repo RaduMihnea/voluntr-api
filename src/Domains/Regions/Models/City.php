@@ -5,6 +5,7 @@ namespace Domain\Regions\Models;
 use Database\Factories\CityFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class City extends Model
 {
@@ -20,5 +21,10 @@ class City extends Model
     protected static function newFactory(): CityFactory
     {
         return CityFactory::new();
+    }
+
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class);
     }
 }
