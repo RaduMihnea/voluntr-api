@@ -20,6 +20,7 @@ class EnrollmentChangeStateController extends Controller
             $enrollment->state->transitionTo(match ($request->state) {
                 EnrollmentStateEnum::APPROVED => Approved::class,
                 EnrollmentStateEnum::REJECTED => Rejected::class,
+                default => throw new TransitionNotFound()
             });
 
             return EnrollmentData::from($enrollment);

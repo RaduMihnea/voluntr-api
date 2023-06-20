@@ -13,7 +13,7 @@
 
 uses(
     Tests\TestCase::class,
-)->in('Architectural', 'Unit');
+)->in('Architectural', 'Unit', 'Feature/Domains');
 
 uses(
     Tests\Feature\App\Http\Controllers\ApiTest::class,
