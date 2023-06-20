@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Domain\Badges\Models\BadgeProgress;
+use Domain\Volunteer\Models\Volunteer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -15,7 +16,7 @@ class BadgeProgressFactory extends Factory
     public function definition(): array
     {
         return [
-            'volunteer_id' => fake()->countryCode(),
+            'volunteer_id' => Volunteer::factory(),
             'slug' => fake()->slug(),
             'progress' => fake()->numberBetween(1, 100),
         ];
