@@ -18,7 +18,7 @@ class BadgeFactory extends Factory
         return [
             'name' => fake()->word(),
             'icon' => fake()->word(),
-            'badge_progress_id' => BadgeProgress::factory(),
+            'badge_progress_slug' => BadgeProgress::factory(),
             'required_completion_amount' => fake()->numberBetween(1, 100),
             'awarded_points' => fake()->numberBetween(50, 1000),
         ];

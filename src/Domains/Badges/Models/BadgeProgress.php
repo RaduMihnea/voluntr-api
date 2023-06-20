@@ -2,6 +2,7 @@
 
 namespace Domain\Badges\Models;
 
+use Database\Factories\BadgeProgressFactory;
 use Database\Factories\EventTypeFactory;
 use Domain\Volunteer\Models\Volunteer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,9 +20,9 @@ class BadgeProgress extends Model
         'progress',
     ];
 
-    protected static function newFactory(): EventTypeFactory
+    protected static function newFactory(): BadgeProgressFactory
     {
-        return EventTypeFactory::new();
+        return BadgeProgressFactory::new();
     }
 
     public function badges(): HasMany

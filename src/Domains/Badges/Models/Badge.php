@@ -2,7 +2,7 @@
 
 namespace Domain\Badges\Models;
 
-use Database\Factories\EventTypeFactory;
+use Database\Factories\BadgeFactory;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -27,9 +27,9 @@ class Badge extends Model
 
     public $timestamps = false;
 
-    protected static function newFactory(): EventTypeFactory
+    protected static function newFactory(): BadgeFactory
     {
-        return EventTypeFactory::new();
+        return BadgeFactory::new();
     }
 
     public function progress(): Attribute
