@@ -4,17 +4,14 @@ namespace Domain\Volunteer\DTOs;
 
 use DB;
 use Domain\Badges\DTOs\BadgeData;
-use Domain\Badges\Models\Badge;
 use Domain\Events\DTOs\VolunteerEnrollmentData;
 use Domain\Events\Enums\EnrollmentStateEnum;
 use Domain\Volunteer\Models\Volunteer;
-use Illuminate\Support\Facades\Hash;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\Attributes\MapName;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 use Spatie\LaravelData\Mappers\SnakeCaseMapper;
-use Support\Actions\CreateUniqueSlugAction;
 
 #[MapName(SnakeCaseMapper::class)]
 class VolunteerPublicProfileData extends Data
@@ -54,7 +51,7 @@ class VolunteerPublicProfileData extends Data
                     icon,
                     required_completion_amount,
                     awarded_points,
-                    coalesce(progress, 0) as progress',
+                    case when coalesce(progress, 0) < required_completion_amount then coalesce(progress, 0) else required_completion_amount end  as progress',
                 )
                 ->leftJoin('badge_progress', 'badges.badge_progress_slug', '=', 'badge_progress.slug')
                 ->where('badge_progress.volunteer_id', $volunteer->id)
@@ -66,8 +63,10 @@ class VolunteerPublicProfileData extends Data
                 ->toArray()
             ),
             enrollments: VolunteerEnrollmentData::collection($volunteer->enrollments()
-                ->where('state', EnrollmentStateEnum::APPROVED)
-                ->orWhereNull('event_id')
+                ->where(function($query) {
+                    $query->where('state', EnrollmentStateEnum::APPROVED)
+                        ->orWhereNull('event_id');
+                })
                 ->orderByDesc('created_at')
                 ->limit(5)->get()
             )
